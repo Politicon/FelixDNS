@@ -1,3 +1,7 @@
+/! GitHub
+<a href="https://github.com/Politicon/FelixDNS"><img style="position: absolute; top: 0; left: 0; border: 0; z-index: 10000;" src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"></a>
+
+/! main content
 nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
   .container
     .navbar-header
@@ -18,26 +22,45 @@ nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
 /! Main jumbotron for a primary marketing message or call to action
 .jumbotron
   .container
-    h1 Hello, world!
-    p This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.
-    p
-      a.btn.btn-primary.btn-lg href="#" role="button"  Learn more &raquo;
+    h1 Your free DDNS provider!
+    p This is a free dynamic DNS service built upon open source software. Compatible with all major modems and routers. Setup is fast and easy.
+    p &nbsp;
+    a.btn.btn-primary.btn-lg href="#" role="button"  Register &raquo;
 
 .container
   /! Example row of columns
   .row
     .col-md-4
-        h2 Heading
-        p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-        p
-          a.btn.btn-default href="#" role="button"  View details &raquo;
+        h2
+          span class="fa-stack fa-lg"
+            i class="fa fa-pencil fa-stack-1x"
+          | yourname.ec.vg
+        p Domains names are short and easy to remember.
+        p 
+          | Your seond-level-domain will be 
+          strong ec.vg
+          | . That is short and simple. The subdomain is entirely your choice. 
+        p 
+          | If you want to use a custom domain, you are welcome to use it with our service by setting a 
+          strong CNAME
+          |-record at your favorite registrar. No charges will apply.
+
     .col-md-4
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default href="#" role="button"  View details &raquo;
+        h2
+          span class="fa-stack fa-lg"
+            i class="fa fa-clock-o fa-stack-1x"
+          | It's fast!
+        p We use DNS-servers provided by cloudflare. These are among the fastest and most reliable on the market. Cloudflare has more than 30 data centers worldwide, so there should be low latencies.
+        p Maximum TTL is 600 seconds on the free plan. So all changes will be active in less than ten minutes. If this is stil too much, there will be a paid plan at $ 5 / year with a TTL of 120 seconds.
+
     .col-md-4
-      h2 Heading
-      p Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-      p
-        a.btn.btn-default href="#" role="button"  View details &raquo;
+        h2
+          span class="fa-stack fa-lg"
+            i class="fa fa-dollar fa-stack-1x"
+            i class="fa fa-ban fa-stack-2x text-danger"
+          | FLOSS
+        p FelixDNS was built as a reaction to many dubious services on the internet. Therefor it is open source software and will always be free of charge and without ads.
+        p Servers and traffic are not for free, however. So if you like this service, your donation is appreciated.
+        a.btn.btn-default href="#" role="button"  
+          i class="fa fa-paypal" &nbsp;
+          | Donate &raquo;

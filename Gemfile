@@ -15,7 +15,6 @@ gem 'rake'
 
 # Component requirements
 gem 'bcrypt'
-gem 'dm-sqlite-adapter'
 gem 'dm-validations'
 gem 'dm-timestamps'
 gem 'dm-migrations'
@@ -26,17 +25,35 @@ gem 'dm-core'
 gem 'slim'
 
 
+group :development, :test do
+  gem 'dm-sqlite-adapter'
+
+  gem "binding_of_caller"
+  gem 'better_errors'
+
+  gem 'dotenv'
+end
+
+group :development do
+  gem 'dawn', :require => false
+end
+
+group :production do
+  gem 'pg'
+  gem 'dm-postgres-adapter'
+  gem 'do_postgres'
+  gem 'dm-do-adapter'
+
+  #TODO: Check if this is necessary!
+  #gem "secure_headers", :require => 'secure_headers'
+end
 
 gem 'cloudflare'
-
-gem 'dotenv'
-
-
 
 # Test requirements
 
 # Padrino Stable Gem
-gem 'padrino', '0.12.4'
+gem 'padrino'
 
 # Or Padrino Edge
 # gem 'padrino', :github => 'padrino/padrino-framework'
