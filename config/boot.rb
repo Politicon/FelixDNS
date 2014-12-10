@@ -35,6 +35,15 @@ Bundler.require(:default, RACK_ENV)
 # Add your before (RE)load hooks here
 #
 Padrino.before_load do
+
+  if RACK_ENV == 'development'
+    Dotenv.load
+  end
+
+
+  Slim::Engine.set_default_options eval(ENV['SLIM_OPTIONS']) if ENV['SLIM_OPTIONS']
+
+
 end
 
 ##

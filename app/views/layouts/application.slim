@@ -1,0 +1,36 @@
+doctype html
+html lang="en" 
+  head
+    meta charset="utf-8"
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+    meta content="width=device-width, initial-scale=1" name="viewport"
+    meta content="" name="description"
+    meta content="" name="author"
+    link href="../../favicon.ico" rel="icon"
+    title Felix DNS - Free and Open Source DynDNS service
+    /! Bootstrap core CSS
+    link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet"
+    link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" rel="stylesheet"
+    /! Custom styles for this template
+
+    = stylesheet_link_tag "application"
+    /! HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+    /![if lt IE 9]
+      script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"
+      script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"
+
+
+  body
+    = yield
+  
+    hr
+      footer
+        .col-md-6
+          p &copy; 2014 Politicon Software und Consulting GmbH
+        .col-md-6.text-right
+          a Impressum
+
+
+    /! Placed at the end of the document so the pages load faster
+    script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" 
+    script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"

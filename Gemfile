@@ -29,6 +29,8 @@ gem 'slim'
 
 gem 'cloudflare'
 
+gem 'dotenv'
+
 
 
 # Test requirements
