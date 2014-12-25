@@ -24,9 +24,32 @@ html lang="de"
 
 
   body
+    /! le navbar
+    nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
+      .container
+        .navbar-header
+          button.navbar-toggle.collapsed aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button"
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand href="/"  FelixDNS
+        #navbar.navbar-collapse.collapse
+          - if !current_account.present?
+            form.navbar-form.navbar-right role="form" method="post" action="/login"
+              = csrf_token_field
+              .form-group
+                input.form-control placeholder="Email" type="text" name="email" autofocus=true
+              .form-group
+                input.form-control placeholder="Password" type="password"  name="password"
+              button.btn.btn-success type="submit"  Sign in
+          - else
+            form.navbar-form.navbar-right role="form" method="post" action="/login"
+              = link_to 'Logout', url(:logout)
+
     /! Page Content
-    = yield
-  
+    == yield
+
     /! Footer
     p &nbsp;
     hr

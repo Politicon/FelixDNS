@@ -1,34 +1,17 @@
 /! GitHub
 <a href="https://github.com/Politicon/FelixDNS"><img style="position: fixed; top: 0; left: 0; border: 0; z-index: 10000;" src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"></a>
 
-/! main content
-nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
-  .container
-    .navbar-header
-      button.navbar-toggle.collapsed aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button"
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      a.navbar-brand href="/"  FelixDNS
-    #navbar.navbar-collapse.collapse
-      form.navbar-form.navbar-right role="form"
-        .form-group
-          input.form-control placeholder="Email" type="text" 
-        .form-group
-          input.form-control placeholder="Password" type="password" 
-        button.btn.btn-success type="submit"  Sign in
-
 /! Main jumbotron for a primary marketing message or call to action
 .jumbotron
   .container
+    div class='main-wrapper'
+      =  {:error => 'danger', :warning => 'warning', :success => 'success', :notice => 'info'}.map { |type, class_name| flash_tag(type, :class => "alert alert-#{class_name} fade in", :bootstrap => true) }.join.html_safe
     h1 Your free DDNS provider!
     p This is a free dynamic DNS service built upon open source software. Compatible with all major modems and routers. Setup is fast and easy.
     p &nbsp;
     a.btn.btn-primary.btn-lg href="#" role="button"  Register &raquo;
 
 .container
-  /! Example row of columns
   .row
     .col-md-4
         h2
@@ -60,7 +43,7 @@ nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
             i class="fa fa-dollar fa-stack-1x"
             i class="fa fa-ban fa-stack-2x text-danger"
           | FLOSS
-        p FelixDNS was built as a reaction to many dubious services on the internet. Therefore it is open source software and will always be free of charge and without ads.
+        p FelixDNS is open source software and will always be free of charge and without ads. You are not required to log in every 30 days and complete a form or will be nagged otherwise to buy a paid plan.
         p However, neither servers nor traffic is free. So if you like this service, your donation is appreciated.
         a.btn.btn-default href="#" role="button"  
           i class="fa fa-paypal" &nbsp;

@@ -1,4 +1,4 @@
-class Domains
+class Domain
   include DataMapper::Resource
   include DataMapper::Validate
 
@@ -9,13 +9,15 @@ class Domains
   property :content,       IPAddress, :required => true
   property :cf_record,     Integer,   :required => false # auto-set
 
-  property :created_at, DateTime
-  property :updated_at, DateTime
-  property :deleted_at, ParanoidDateTime
+  property :created_at,    DateTime
+  property :updated_at,    DateTime
+  property :deleted_at,    ParanoidDateTime
 
 
   belongs_to :account, :required => false
 
+  # Validations
+  validates_format_of    :name,     :with => /[0-9a-z]/
 
 
   before :save, :create_or_update
@@ -30,7 +32,7 @@ class Domains
 
 
   def connect
-    cf = CloudFlare::connection('440043ea7811fbbd774c9795013b7c68891d0','felix@politicon.de')
+    cf = CloudFlare::connection(ENV['CLOUDFLARE_API_KEY'],ENV['CLOUDFLARE_EMAIL'])
     logger.debug cf
 
     cf

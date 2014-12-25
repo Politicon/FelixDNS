@@ -2,8 +2,25 @@ module Felixdns
   class App < Padrino::Application
     register Padrino::Mailer
     register Padrino::Helpers
+    register Padrino::Admin::AccessControl
 
     enable :sessions
+
+
+    set :admin_model, 'Account'
+    set :login_page,  '/'
+
+    enable  :sessions
+    disable :store_location
+
+    access_control.roles_for :any do |role|
+      #role.allow   '/'
+      role.protect '/dashboard'
+    end
+
+    access_control.roles_for :user, :admin do |role|
+      role.project_module :dashboard, '/dashboard'
+    end
 
     ##
     # Caching support.
